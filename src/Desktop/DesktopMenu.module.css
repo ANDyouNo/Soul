@@ -1,0 +1,64 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Зададим высоту меню */
+}
+
+.menuGroup {
+  display: flex;
+  gap: 30px; /* Расстояние между ссылками в паре */
+}
+
+.menuGroup:not(:last-child) {
+  margin-right: 300px; /* Отступ между парами */
+}
+
+.link {
+  text-decoration: none;
+  font-size: 26px; /* Можно настроить размер текста */
+  color: #fff; /* Цвет ссылок */
+	font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.link:hover {
+}
+
+
+/* Effect 1: Brackets */
+.menu a::before,
+.menu a::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.menu a::before {
+	margin-right: 10px;
+	content: '[';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.menu a::after {
+	margin-left: 10px;
+	content: ']';
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+.menu a:hover::before,
+.menu a:hover::after,
+.menu a:focus::before,
+.menu a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}

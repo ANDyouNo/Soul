@@ -1,11 +1,18 @@
-// src/DesktopVersion.js
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import DesktopMenu from "./Desktop/DesktopMenu";
+import MainPage from "./Desktop/MainPage/MainPage";
 
 const DesktopVersion = () => {
   return (
-    <div>
-      <h1>This is PC version</h1>
-    </div>
+    <Router>
+      <DesktopMenu />
+      <Routes>
+        <Route path="/" element={<MainPage />} />{" "}
+        {/* Роут для главной страницы */}
+        {/* Другие роуты можно добавить здесь */}
+      </Routes>
+    </Router>
   );
 };
 
