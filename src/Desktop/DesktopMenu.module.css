@@ -3,6 +3,13 @@
   justify-content: center;
   align-items: center;
   height: 100px; /* Зададим высоту меню */
+	width: 100%;
+	position: fixed;
+	background-color: rgba(0, 0, 0, .3);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+
+	z-index: 2;
 }
 
 .menuGroup {

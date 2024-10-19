@@ -8,6 +8,7 @@
 	font-family: "Raleway", sans-serif;
   font-style: normal;
 	flex-direction: row-reverse;
+	margin-bottom: 300px;
 }
 
 .photo {
@@ -22,7 +23,7 @@
 .par {
 	font-size: 20px;
 	font-weight: 300;
-	margin: 0 30px;
+	margin: 0 40px;
 	color: #D1D1D1;
 }
 
