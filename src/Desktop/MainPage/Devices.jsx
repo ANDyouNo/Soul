@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import gsap from "gsap";
-import styles from "./Hero.module.css"; // Стили для фото и текста
 import cn from "classnames";
+import gsap from "gsap";
+import styles from "./Devices.module.css";
 
-const Hero = () => {
+const Devices = () => {
   useEffect(() => {
     // Анимация появления текста и фото при загрузке
     gsap.fromTo(
@@ -23,20 +23,18 @@ const Hero = () => {
   return (
     <div className={styles.container}>
       <img
-        src="./Assets/cameraman.jpg"
+        src="./Assets/cameraflight.jpg"
         alt="Фото"
         className={cn("animate-item", styles.photo)} // Корректное использование classnames
       />
       <div className={styles.textWrap}>
-        <h1 className={cn("animate-item", styles.header)}>Привет! Я Андрей</h1>
+        <h1 className={cn("animate-item", styles.header)}>Лучшие инструменты</h1>
         <p className={cn("animate-item", styles.par)}>
-          Как фотограф, я стремлюсь запечатлеть каждый момент, каждый взгляд и
-          каждую эмоцию. Позвольте мне помочь вам сохранить ваши самые важные
-          воспоминания
+          Они помогают достичь профессионального качества в моей работе
         </p>
       </div>
     </div>
   );
 };
 
-export default Hero;
+export default Devices;
