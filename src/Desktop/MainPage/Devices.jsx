@@ -29,7 +29,7 @@ const Devices = () => {
     );
 
     // Разбиваем текст на символы при помощи SplitType
-    const textSplit = new SplitType(".animate-text", { types: "chars" });
+    const textSplit = new SplitType(".animate-text", { types: "chars" }); // для анимации по словм тип wods
 
     // Анимация для каждого символа
     gsap.fromTo(
