@@ -5,7 +5,7 @@
   height: 100px; /* Зададим высоту меню */
 	width: 100%;
 	position: fixed;
-	background-color: rgba(0, 0, 0, .3);
+	background-color: rgba(0, 0, 0, .4);
 	backdrop-filter: blur(20px);
 	-webkit-backdrop-filter: blur(20px);
 
