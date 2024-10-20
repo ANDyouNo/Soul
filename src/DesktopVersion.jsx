@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import DesktopMenu from "./Desktop/DesktopMenu";
 import MainPage from "./Desktop/MainPage/MainPage";
 
@@ -8,8 +8,7 @@ const DesktopVersion = () => {
     <Router>
       <DesktopMenu />
       <Routes>
-        <Route path="/Soul" element={<MainPage />} />{" "}
-        {/* Роут для главной страницы */}
+        <Route path="/" element={<MainPage />} /> {/* Главная страница */}
         {/* Другие роуты можно добавить здесь */}
       </Routes>
     </Router>
