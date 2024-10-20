@@ -23,7 +23,7 @@ const Hero = () => {
   return (
     <div className={styles.container}>
       <img
-        src="./Assets/cameraman.jpg"
+        src="./assets/cameraman.jpg"
         alt="Фото"
         className={cn("animate-item", styles.photo)} // Корректное использование classnames
       />

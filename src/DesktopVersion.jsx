@@ -8,7 +8,7 @@ const DesktopVersion = () => {
     <Router>
       <DesktopMenu />
       <Routes>
-        <Route path="/" element={<MainPage />} />{" "}
+        <Route path="/Soul" element={<MainPage />} />{" "}
         {/* Роут для главной страницы */}
         {/* Другие роуты можно добавить здесь */}
       </Routes>

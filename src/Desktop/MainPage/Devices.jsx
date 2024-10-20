@@ -55,7 +55,7 @@ const Devices = () => {
   return (
     <div className={styles.container}>
       <img
-        src="./Assets/cameraflight.jpg"
+        src="./assets/cameraflight.jpg"
         alt="Фото"
         className={cn("animate-item2", styles.photo)} // Картинка с классом для анимации
       />
