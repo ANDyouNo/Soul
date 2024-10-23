@@ -95,8 +95,8 @@ body {
 
 @font-face {
     font-family: 'Raleway';
-    src: url('../public/webfontkit/Raleway-Light.woff2') format('woff2'),
-         url('../public/webfontkit/Raleway-Light.woff') format('woff');
+    src: url('./webfontkit/Raleway-Light.woff2') format('woff2'),
+         url('./webfontkit/Raleway-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 
@@ -107,8 +107,8 @@ body {
 
 @font-face {
     font-family: 'Raleway';
-    src: url('../public/webfontkit/Raleway-Regular.woff2') format('woff2'),
-         url('../public/webfontkit/Raleway-Regular.woff') format('woff');
+    src: url('./webfontkit/Raleway-Regular.woff2') format('woff2'),
+         url('./webfontkit/Raleway-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 
@@ -119,8 +119,8 @@ body {
 
 @font-face {
     font-family: 'Raleway';
-    src: url('../public/webfontkit/Raleway-SemiBold.woff2') format('woff2'),
-         url('../public/webfontkit/Raleway-SemiBold.woff') format('woff');
+    src: url('./webfontkit/Raleway-SemiBold.woff2') format('woff2'),
+         url('./webfontkit/Raleway-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 }
