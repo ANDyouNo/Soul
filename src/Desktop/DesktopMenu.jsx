@@ -1,24 +1,25 @@
 import React from "react";
 import styles from "./DesktopMenu.module.css"; // Импортируем стили как модули
+import { Link } from "react-router-dom";
 
 const DesktopMenu = () => {
   return (
     <nav className={styles.menu}>
       <div className={styles.menuGroup}>
-        <a href="#photo" className={styles.link}>
+        <Link to="/photo" className={styles.link}>
           Фото
-        </a>
-        <a href="#video" className={styles.link}>
+        </Link>
+        <Link to="/video" className={styles.link}>
           Видео
-        </a>
+        </Link>
       </div>
       <div className={styles.menuGroup}>
-        <a href="#art" className={styles.link}>
-          ART
-        </a>
-        <a href="#sound" className={styles.link}>
+        <Link to="/art" className={styles.link}>
+          Art
+        </Link>
+        <Link to="/sound" className={styles.link}>
           Sound
-        </a>
+        </Link>
       </div>
     </nav>
   );
