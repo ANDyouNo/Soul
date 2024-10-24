@@ -1,0 +1,50 @@
+.content {
+  position: relative;
+  min-height: 100vh;
+  background: #0e0d0e;
+	color: aliceblue;
+}
+
+.content--padded {
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, min-content);
+  gap: 1rem;
+}
+
+.grid--spaced {
+  gap: 1rem;
+}
+
+.grid__img {
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.grid__item {
+  text-align: center;
+}
+
+.pos-6 {
+  grid-area: 2 / 1;
+}
+
+.pos-7 {
+  grid-area: 2 / 3;
+}
+
+.pos-18 {
+  grid-area: 2 / 5;
+}
+
+.type-tiny {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
