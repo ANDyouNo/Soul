@@ -128,3 +128,8 @@ body {
 body {
   font-family: 'Raleway', sans-serif; /* Шрифт по умолчанию для всего приложения */
 }
+
+/*Убрать полосу прокрутки для всей страницы*/
+::-webkit-scrollbar {
+  width: 0;
+}
