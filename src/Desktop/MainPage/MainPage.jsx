@@ -5,6 +5,11 @@ import styles from "./MainPage.module.css"; // Стили для MainPage
 import Individual from "./Individual";
 import FullScreenText from "./FullScreenText";
 import MainPageGallery from "./MainPageGallery";
+import gsap from "gsap";
+
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 
 const MainPage = () => {
   return (

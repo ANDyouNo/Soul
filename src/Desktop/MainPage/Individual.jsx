@@ -5,7 +5,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import styles from "./Individual.module.css";
 
-gsap.registerPlugin(ScrollTrigger);
 
 const Individual = () => {
   useEffect(() => {

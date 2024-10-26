@@ -4,7 +4,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import styles from "./FullScreenText.module.css";
 import cn from "classnames";
 
-gsap.registerPlugin(ScrollTrigger);
 
 const FullScreenText = () => {
   useEffect(() => {

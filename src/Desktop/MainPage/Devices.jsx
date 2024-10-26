@@ -5,7 +5,6 @@ import ScrollTrigger from "gsap/ScrollTrigger"; // Импортируем Scroll
 import SplitType from "split-type"; // Библиотека для разделения текста на символы
 import styles from "./Devices.module.css";
 
-gsap.registerPlugin(ScrollTrigger); // Регистрируем плагин
 
 const Devices = () => {
   useEffect(() => {
