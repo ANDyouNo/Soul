@@ -3,6 +3,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import styles from "./FullScreenText.module.css";
 import cn from "classnames";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,6 +36,9 @@ const FullScreenText = () => {
       <h1 className={cn("fullscreen-text", styles.ftext)}>
         Текст превращается в магию
       </h1>
+      <Link className={cn("fullscreen-text", styles.LinkText)} to="/photo">
+        Галлерея Фото
+      </Link>
     </div>
   );
 };

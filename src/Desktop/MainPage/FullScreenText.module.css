@@ -4,6 +4,9 @@
   align-items: center;
   height: 100vh; /* Высота на весь экран */
   background-color: #000; /* Чёрный фон */
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
 }
 
 .ftext {
@@ -11,4 +14,19 @@
   font-size: 5rem; /* Большой размер шрифта */
   text-align: center;
   font-weight: 400;
+}
+.LinkText {
+  color: #fff; /* Белый цвет текста */
+  font-size: 2rem; /* Большой размер шрифта */
+  text-align: center;
+  font-weight: 400;
+	transition: .5s;
+}
+.LinkText:hover {
+  color: #aaa; /* Белый цвет текста */
+  font-size: 3rem; /* Большой размер шрифта */
+  text-align: center;
+  font-weight: 400;
+	transition: .5s;
+
 }

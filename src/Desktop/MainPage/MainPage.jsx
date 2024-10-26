@@ -4,7 +4,6 @@ import Devices from "./Devices";
 import styles from "./MainPage.module.css"; // Стили для MainPage
 import Individual from "./Individual";
 import FullScreenText from "./FullScreenText";
-import MainPageGallery from "./MainPageGallery";
 
 const MainPage = () => {
   return (
@@ -13,7 +12,6 @@ const MainPage = () => {
 			<Devices></Devices>
 			<Individual></Individual>
 			<FullScreenText></FullScreenText>
-			<MainPageGallery></MainPageGallery>
       {/* Добавить другие компоненты для MainPage */}
     </div>
   );
