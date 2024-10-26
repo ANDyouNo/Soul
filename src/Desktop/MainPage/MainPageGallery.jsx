@@ -1,98 +1,75 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import classNames from "classnames";
-import styles from "./MainPageGallery.module.css"; // Импорт стилей как модуль
+import styles from "./MainPageGallery.module.css"; // Импорт стилей
 
 gsap.registerPlugin(ScrollTrigger);
 
 const MainPageGallery = () => {
   useEffect(() => {
-    const grid = document.querySelector("[data-grid-gallery]");
-    const gridImages = grid.querySelectorAll(`.${styles.grid__img}`);
-    const middleIndex = Math.floor(gridImages.length / 2);
+    const items = document.querySelectorAll(`.${styles.item}`);
+    const captions = document.querySelectorAll(`.${styles.caption}`);
+    const images = document.querySelectorAll(`.${styles.image}`);
 
-    gsap
-      .timeline({
-        defaults: {
-          ease: "power3",
-        },
+    images.forEach((image, index) => {
+      // Анимация для каждой картинки
+      gsap.to(image, {
+        y: 0, // Сдвиг до исходного положения
+        opacity: 1, // Появление
+        duration: 1,
+        ease: "none", // Без резких ускорений/замедлений
         scrollTrigger: {
-          trigger: grid,
-          start: "center center",
-          end: "+=250%",
-          pin: grid.parentNode,
-          scrub: 0.5,
+          trigger: `.${styles.image}`, // Картинка будет триггером
+          start: "top 80%", // Начало анимации, когда верх картинки достигает нижней части экрана
+          end: "bottom 20%", // Конец анимации, когда верх картинки достигает верхней части экрана
+          scrub: true, // Анимация будет связана с прокруткой
+          markers: true, //
         },
-      })
-      .from(gridImages, {
-        stagger: {
-          amount: 0.3,
-          from: "center",
-        },
-        y: window.innerHeight,
-        transformOrigin: "50% 0%",
-        rotation: (pos) => {
-          const distanceFromCenter = Math.abs(pos - middleIndex);
-          return pos < middleIndex
-            ? distanceFromCenter * 3
-            : distanceFromCenter * -3;
-        },
-      })
-      .from(
-        grid.querySelectorAll(`.${styles.grid__item}`),
-        {
-          stagger: {
-            amount: 0.3,
-            from: "center",
+      });
+
+      // Анимация для каждой подписи (если она есть)
+      if (captions[index]) {
+        gsap.to(captions[index], {
+          y: 0, // Сдвиг до исходного положения
+          opacity: 1, // Появление
+          duration: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: captions[index], // Подпись будет триггером
+            start: "top 80%", // Начало анимации, когда верх картинки достигает нижней части экрана
+            end: "bottom 20%", // Конец анимации, когда подпись достигает верха экрана
+            scrub: true, // Подпись анимируется по скроллу
           },
-          yPercent: 100,
-          autoAlpha: 0,
-        },
-        0
-      );
+        });
+      }
+    });
   }, []);
 
   return (
-    <section className={classNames(styles.content, styles["content--padded"])}>
-      <div
-        className={classNames(styles.grid, styles["grid--spaced"])}
-        data-grid-gallery
-      >
-        <div
-          className={styles.grid__img}
-          style={{ backgroundImage: 'url("./assets/galref.jpg")' }}
-        ></div>
-        <div
-          className={styles.grid__img}
-          style={{ backgroundImage: 'url("./assets/galref.jpg")' }}
-        ></div>
-        <div
-          className={styles.grid__img}
-          style={{ backgroundImage: 'url("./assets/galref.jpg")' }}
-        ></div>
-        <div
-          className={styles.grid__img}
-          style={{ backgroundImage: 'url("./assets/galref.jpg")' }}
-        ></div>
-        <div
-          className={styles.grid__img}
-          style={{ backgroundImage: 'url("./assets/galref.jpg")' }}
-        ></div>
-        <div className={classNames(styles.grid__item, styles.pos - 6)}>
-          <h4 className={styles["type-tiny"]}>Vision</h4>
-          <p>Unveiling the unseen</p>
-        </div>
-        <div className={classNames(styles.grid__item, styles.pos - 7)}>
-          <h4 className={styles["type-tiny"]}>Focus</h4>
-          <p>Where color meets form</p>
-        </div>
-        <div className={classNames(styles.grid__item, styles.pos - 18)}>
-          <h4 className={styles["type-tiny"]}>Essence</h4>
-          <p>Moments in motion</p>
-        </div>
+    <div className={styles.gallery}>
+      <div className={styles.item}>
+        <div className={styles.image} style={{ backgroundColor: "#FFF" }}></div>
+        <div className={styles.caption}>Caption 1</div>
       </div>
-    </section>
+
+      <div className={styles.item}>
+        <div className={styles.image} style={{ backgroundColor: "#FFF" }}></div>
+      </div>
+
+      <div className={styles.item}>
+        <div className={styles.image} style={{ backgroundColor: "#FFF" }}></div>
+        <div className={styles.caption}>Caption 3</div>
+      </div>
+
+      <div className={styles.item}>
+        <div className={styles.image} style={{ backgroundColor: "#FFF" }}></div>
+      </div>
+
+      <div className={styles.item}>
+        <div className={styles.image} style={{ backgroundColor: "#FFF" }}></div>
+        <div className={styles.caption}>Caption 5</div>
+      </div>
+    </div>
   );
 };
 
