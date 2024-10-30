@@ -14,12 +14,18 @@ const DesktopMenu = () => {
         </Link>
       </div>
       <div className={styles.menuGroup}>
-        <Link to="/art" className={styles.link}>
+        <a
+          href="https://andyouno.github.io/empty_page/"
+          className={styles.link}
+        >
           Art
-        </Link>
-        <Link to="/sound" className={styles.link}>
+        </a>
+        <a
+          href="https://andyouno.github.io/empty_page/"
+          className={styles.link}
+        >
           Sound
-        </Link>
+        </a>
       </div>
     </nav>
   );
