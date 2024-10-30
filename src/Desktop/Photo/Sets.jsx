@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
-import styles from "./Sets.module.css"; // Импорт стилей
+import React, { useState, useEffect } from "react";
+import { gsap } from "gsap";
+import styles from "./Sets.module.css";
 
 const photosessions = [
   {
@@ -10,11 +11,20 @@ const photosessions = [
       `${import.meta.env.BASE_URL}assets/Sets/wedding/2.jpg`,
       `${import.meta.env.BASE_URL}assets/Sets/wedding/3.jpg`,
       `${import.meta.env.BASE_URL}assets/Sets/wedding/4.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/wedding/4.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/wedding/4.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/wedding/4.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/wedding/4.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/wedding/5.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/wedding/6.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/wedding/7.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/wedding/8.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/wedding/9.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/wedding/10.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/wedding/11.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/wedding/12.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/wedding/13.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/wedding/14.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/wedding/15.jpg`,
     ],
+    description:
+      "Фотосессия для тебя и твоей половинки на одном из самых важных мероприятий.",
   },
   {
     id: 2,
@@ -22,134 +32,184 @@ const photosessions = [
     preview: `${import.meta.env.BASE_URL}assets/Sets/Family/1.jpg`,
     gallery: [
       `${import.meta.env.BASE_URL}assets/Sets/Family/2.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/Family/2.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/Family/2.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/Family/2.jpg`,
       `${import.meta.env.BASE_URL}assets/Sets/Family/3.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Family/4.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Family/5.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Family/6.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Family/7.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Family/8.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Family/9.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Family/10.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Family/11.jpg`,
     ],
+    description: "Семейные моменты, которые останутся в памяти навсегда.",
   },
   {
     id: 3,
-    title: "Семейная фотосессия",
-    preview: `${import.meta.env.BASE_URL}assets/Sets/Family/1.jpg`,
+    title: "Детская фотосессия",
+    preview: `${import.meta.env.BASE_URL}assets/Sets/kids/1.jpg`,
     gallery: [
-      `${import.meta.env.BASE_URL}assets/Sets/Family/2.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/Family/2.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/Family/2.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/Family/2.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/Family/3.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/2.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/3.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/4.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/5.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/6.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/7.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/8.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/9.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/10.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/11.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/12.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/13.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/14.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/15.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/16.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/kids/17.jpg`,
     ],
+    description: "Важные моменты детства в кадре.",
   },
   {
     id: 4,
-    title: "Семейная фотосессия",
-    preview: `${import.meta.env.BASE_URL}assets/Sets/Family/1.jpg`,
+    title: "Спортивная фотосессия",
+    preview: `${import.meta.env.BASE_URL}assets/Sets/Sport/1.jpg`,
     gallery: [
-      `${import.meta.env.BASE_URL}assets/Sets/Family/2.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/Family/2.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/Family/2.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/Family/2.jpg`,
-      `${import.meta.env.BASE_URL}assets/Sets/Family/3.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/2.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/3.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/4.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/5.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/7.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/8.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/9.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/10.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/11.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/12.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/13.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/14.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/15.jpg`,
+      `${import.meta.env.BASE_URL}assets/Sets/Sport/16.jpg`,
     ],
+    description: "Моменты триумфа и силы, запечатленные навсегда.",
   },
 ];
 
 const Sets = () => {
-  const [activePreview, setActivePreview] = useState(null);
-  const [activeGallery, setActiveGallery] = useState(null);
-  const [activeMenu, setActiveMenu] = useState(null);
-  const [animationClass, setAnimationClass] = useState(""); // Для анимации
-  const galleryRef = useRef(null);
+  const [selectedSet, setSelectedSet] = useState(null); // Запоминаем выбранную галерею
+  const [hoveredSet, setHoveredSet] = useState(null); // Отвечает за превью
+  const [activeGallery, setActiveGallery] = useState(null); // Активная галерея
+  const [isGalleryVisible, setGalleryVisible] = useState(true); // Управляем видимостью галереи
 
-  const handleMouseEnter = (photosession) => {
-    setAnimationClass(styles.fadeOut); // Анимация скрытия галереи
+  useEffect(() => {
+    if (hoveredSet) {
+      gsap.fromTo(
+        ".preview",
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, duration: 0.5 }
+      );
+    }
+  }, [hoveredSet]);
+
+  useEffect(() => {
+    if (isGalleryVisible && activeGallery) {
+      gsap.fromTo(
+        ".gallery",
+        { opacity: 0, y: 20, },
+        { opacity: 1, y: 0, duration: 0.5,}
+      );
+    } else if (!isGalleryVisible) {
+      gsap.to(".gallery", { opacity: 0, x: 20, duration: 0.5 });
+    }
+  }, [isGalleryVisible, activeGallery]);
+
+  const handleMenuClick = (setName) => {
+    setSelectedSet(setName);
+    setHoveredSet(null);
+    setGalleryVisible(false); // Скрываем галерею перед её обновлением
+
     setTimeout(() => {
-      setActiveGallery(null); // Скрываем галерею после анимации
-      setActivePreview(photosession.preview); // Показываем превью
-      setAnimationClass(styles.fadeIn); // Анимация появления превью
-    }, 500); // Время синхронизируется с анимацией
+      setActiveGallery(setName);
+      setGalleryVisible(true); // Показываем новую галерею после обновления
+    }, 500); // Ожидаем, пока предыдущая галерея исчезнет
+  };
+
+  const handleMouseEnter = (setName) => {
+    setHoveredSet(setName);
+    setGalleryVisible(false); // Скрываем галерею, когда появляется превью
   };
 
   const handleMouseLeave = () => {
-    if (!activeGallery) setActivePreview(null);
+    setHoveredSet(null);
+    setGalleryVisible(true); // Возвращаем галерею, если она была выбрана
   };
 
-  const openGallery = (photosession) => {
-    setAnimationClass(styles.fadeOut); // Анимация скрытия превью
-    setTimeout(() => {
-      setActiveGallery(photosession); // Показываем галерею
-      setActiveMenu(photosession.id); // Запоминаем выбранный раздел
-      setActivePreview(null); // Превью скрывается
-      setAnimationClass(styles.fadeIn); // Анимация появления галереи
-    }, 500); // Время синхронизируется с анимацией
+  // Находим активную фотосессию из массива по ее названию
+  const getCurrentPhotosession = (title) => {
+    return photosessions.find((session) => session.title === title);
   };
-
-  useEffect(() => {
-    const handleWheel = (e) => {
-      if (galleryRef.current) {
-        galleryRef.current.scrollLeft += e.deltaY;
-      }
-    };
-    galleryRef.current?.addEventListener("wheel", handleWheel);
-    return () => galleryRef.current?.removeEventListener("wheel", handleWheel);
-  }, []);
 
   return (
     <div className={styles.container}>
-      {/* Меню слева */}
-      <ul className={styles.menu}>
-        {photosessions.map((photosession) => (
-          <li
-            key={photosession.id}
-            onMouseEnter={() => handleMouseEnter(photosession)}
-            onMouseLeave={handleMouseLeave}
-            onClick={() => openGallery(photosession)}
-            className={`${styles.menuItem} ${
-              activeMenu === photosession.id ? styles.active : ""
+      <div className={styles.menu}>
+        {photosessions.map((session) => (
+          <h5
+            key={session.id}
+            className={`${styles.menuOpt} ${
+              selectedSet === session.title ? styles.selected : ""
             }`}
+            onClick={() => handleMenuClick(session.title)}
           >
-            {photosession.title}
-          </li>
+            <span
+              onMouseEnter={() => handleMouseEnter(session.title)}
+              onMouseLeave={handleMouseLeave}
+              className={styles.menuText}
+            >
+              {session.title}
+            </span>
+          </h5>
         ))}
-      </ul>
+      </div>
 
-      {/* Галерея и превью */}
-      <div className={styles.galleryContainer}>
-        {/* Заглушка для выбора фотосессии */}
-        {!activeGallery && !activePreview && (
-          <div className={styles.placeholderText}>Выбери свою фотосессию</div>
+      <div className={styles.content}>
+        {/* Заглушка по умолчанию */}
+        {!selectedSet && !hoveredSet && (
+          <p className={styles.placeholder}>Выбери свою фотосессию</p>
         )}
 
-        {/* Превью при наведении */}
-        {!activeGallery && activePreview && (
-          <div className={`${styles.preview} ${animationClass}`}>
-            <img src={activePreview} alt="Preview" />
+        {/* Превью на наведение */}
+        {hoveredSet && (
+          <div className={`preview ${styles.preview}`}>
+            <img
+              src={getCurrentPhotosession(hoveredSet)?.preview}
+              alt={`Превью ${hoveredSet}`}
+              className={styles.previewImage}
+            />
+            <div className={styles.info}>
+              <h2 className={styles.infoHeader}>{hoveredSet}</h2>
+              <p className={styles.infoDescr}>
+                {getCurrentPhotosession(hoveredSet)?.description}
+              </p>
+            </div>
           </div>
         )}
 
-        {/* Галерея с изображениями */}
-        {activeGallery && (
+        {/* Галерея для выбранного пункта */}
+        {isGalleryVisible && activeGallery && !hoveredSet && (
           <div>
-            <div
-              ref={galleryRef}
-              className={`${styles.gallery} ${animationClass}`}
-            >
-              {activeGallery.gallery.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`Gallery ${index}`}
-                  className={styles.galleryImg}
-                />
-              ))}
-              {/* Кнопка для связи */}
+            <div className={`gallery ${styles.gallery}`}>
+              <div className={styles.photos}>
+                {getCurrentPhotosession(activeGallery)?.gallery.map(
+                  (photo, index) => (
+                    <img
+                      key={index}
+                      src={photo}
+                      alt={`Фотография ${index + 1}`}
+                      className={styles.photo}
+                    />
+                  )
+                )}
+              </div>
+              
             </div>
-            <button
-              onClick={() => (window.location.href = "/contact")}
-              className={`${styles.contactButton} ${animationClass}`}
-            >
-              Связаться со мной
-            </button>
+						<button className={styles.fixedButton}>Connect</button>
           </div>
         )}
       </div>

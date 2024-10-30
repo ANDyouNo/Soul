@@ -1,223 +1,159 @@
-/* Стили для контейнера */
 .container {
+  color: aliceblue;
   display: flex;
-  height: 98vh;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  min-height: 100dvh;
 }
 
-/* Стили для меню */
 .menu {
-  width: 20%; /* Меню занимает 1/5 экрана */
-  list-style: none;
-  padding: 0;
-}
-
-.menuItem {
-  cursor: pointer;
-  padding: 10px 0;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.menuItem:hover {
-  color: #00aaff; /* Голубой цвет при наведении */
-}
-
-.menuItem.active {
-  color: #00ff00; /* Зеленый цвет для выбранного раздела */
-}
-
-/* Стили для превью */
-.preview {
-  width: 80%; /* Блок просмотра занимает оставшуюся часть */
+	top: 42%;
+	position: fixed;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  opacity: 0; /* Превью по умолчанию скрыто */
-}
-
-.preview img {
-  max-width: 100%;
-  max-height: 80vh;
-  object-fit: contain;
-  border-radius: 20px;
-  transition: opacity 0.5s ease; /* Анимация появления */
-}
-
-.fadeIn {
-  opacity: 1; /* Плавное появление превью */
-}
-
-/* Стили для галереи */
-.gallery {
-  display: flex;
-  flex-wrap: wrap; /* Изображения расположены в сетке */
-  gap: 20px;
-  max-height: 80vh;
-  max-width: 80vw;
-  overflow-y: auto; /* Вертикальный скролл, если изображений много */
-  padding: 10px;
-}
-
-.gallery img {
-  width: calc(80vh * 2 / 3); /* Соотношение сторон 2:3 */
-  height: auto;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
-.galleryContainer {
-  width: 80%; /* Блок просмотра занимает 4/5 страницы */
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-}
-
-/* Стили для кнопки связи */
-.contactButton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
-  position: relative;
-}
-
-.contactButton:hover {
-  background-color: #007bff;
-  color: white;
-}
-
-/* Стили для заглушки */
-.placeholderText {
-  font-size: 24px;
-  color: #666;
-  text-align: center;
-}
-
-
-
-
-
-
-
-/* Стили для меню */
-.menu {
-  width: 20%; /* Меню теперь занимает 1/5 ширины */
-  list-style: none;
-  padding: 0;
-}
-
-.menuItem {
-  cursor: pointer;
-  padding: 10px 0;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.menuItem:hover {
-  color: #00aaff; /* Голубой цвет при наведении */
-}
-
-.menuItem.active {
-  color: #00ff00; /* Зеленый цвет для выбранного раздела */
-}
-
-/* Анимация для плавного появления/исчезновения элементов */
-.fadeIn {
-  opacity: 0;
-  transform: scale(0.95);
-  animation: fadeIn 0.5s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.fadeOut {
-  opacity: 1;
-  transform: scale(1);
-  animation: fadeOut 0.5s forwards;
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-}
-
-/* Стили для заглушки */
-.placeholderText {
-  font-size: 24px;
-  color: #666;
-  text-align: center;
-  margin-top: 50px;
-  opacity: 0;
-  transform: scale(0.9);
-  animation: fadeIn 0.5s forwards;
-}
-
-/* Стили для превью */
-.preview {
-  width: 80%;
-  padding: 20px;
-  display: flex;
   justify-content: center;
+  min-width: 20%;
+  padding-left: 20px;
+}
+
+.menuText {
+	cursor: pointer;
+}
+.menuText:hover {
+	color: chocolate;
+	cursor: pointer;
+}
+
+.menuOpt {
+	padding: 12px 0;
+}
+
+/* .menuOpt:hover {
+  cursor: pointer;
+  background-color: aqua;
+} */
+
+.content {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  color: coral;
+  width: 100%;
+  overflow-y: auto;
 }
 
-.preview img {
-  max-width: 100%;
-  max-height: 70vh;
-  object-fit: contain;
-  border-radius: 20px; /* Закругленные края */
-  opacity: 0;
-  animation: fadeIn 0.5s forwards;
+.preview {
+  padding: 80px;
+  border-radius: 10px;
 }
 
-/* Стили для галереи */
 .gallery {
-  
-  opacity: 0;
-  animation: fadeIn 0.5s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
 }
 
-.gallery img {
-  width: auto;
-  height: calc(80vh * 2 / 3); /* Соотношение сторон 2:3 */
-  object-fit: cover;
-  border-radius: 20px; /* Закругляем края */
+.photos {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
 }
 
-/* Стили для кнопки связи */
-.contactButton {
-  margin-top: 20px;
+.fixedButton {
+	position: fixed;
+  bottom: 20px;
+	right: 36vw;
+  background-color: coral;
+  color: white;
   padding: 10px 20px;
-  background-color: white;
   border: none;
   cursor: pointer;
-  font-size: 18px;
+  border-radius: 5px;
   transition: background-color 0.3s ease;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  animation: fadeIn 0.5s forwards;
+	align-self: center;
+	
 }
 
-.contactButton:hover {
-  background-color: #007bff;
-  color: white;
+.fixedButton:hover {
+  background-color: darkorange;
 }
+
+
+
+
+
+.photos {
+  display: flex;
+  gap: 10px;
+
+  
+  padding-top: 100px;
+}
+
+.photo {
+  width: 25vw;
+  height: 60vh;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+
+.previewImage {
+  width: 30vw;
+  height: auto;
+  border-radius: 20px;
+}
+.gallery {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-left: 20%;
+	padding-bottom: 100px;
+}
+
+.preview {
+	display: flex;
+	gap: 20px;
+	max-width: 70vw;
+}
+.info {
+  display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 25vw;
+	gap: 20px;
+}
+.infoHeader {
+	color: burlywood;
+	font-size: 32px;
+	font-weight: 400;
+}
+.infoDescr {
+	color:chocolate;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+
+.selected {
+  color: gold; /* Можно изменить цвет для выделенного пункта */
+}
+
+@keyframes placeholder {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 100;
+	}
+}
+
+.placeholder {
+	animation: placeholder .5s;
+}
+
 
