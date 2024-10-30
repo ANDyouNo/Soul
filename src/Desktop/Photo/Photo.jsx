@@ -280,7 +280,7 @@ const Photo = () => {
           <a className="backtop" data-scroll data-scroll-speed="4">
             Back to the top
           </a>
-          <Link className="chooseLink" to="" data-scroll data-scroll-speed="3">
+          <Link className="chooseLink" to="/photo/sets" data-scroll data-scroll-speed="3">
             Выбрать свою фотосессию
           </Link>
         </section>
